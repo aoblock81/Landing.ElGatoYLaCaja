@@ -1,0 +1,1121 @@
+/********
+Paso 0: Definimos tipografías y propiedades básicas del documento
+
+********/
+
+@font-face {
+  font-family: "SF Pro Display", sans-serif;
+  src: url("../assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.otf")
+    format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono", monospace;
+  src: url("../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf")
+    format("otf");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBM Plex Mono", monospace;
+  src: url("../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf")
+    format("otf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* definimos el tamaño de tipografía base y la familia tipográfica por defecto */
+html,
+body {
+  color: #1b1f27;
+  font-size: 10px;
+  font-family: "SF Pro Display";
+}
+* {
+  box-sizing: border-box !important; /* Importante: esto hace que el tamaño de todas las cajas contemple el padding */
+}
+
+/* la familia tipográfica por defecto para los títulos */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "SF Pro Display", sans-serif;
+}
+
+h1 {
+  font-size: 8rem;
+  font-weight: 800;
+}
+h2 {
+  font-size: 6rem;
+  font-weight: 200;
+}
+
+h3 {
+  font-size: 5rem;
+  font-weight: 200;
+}
+
+h4 {
+  font-size: 4rem;
+  font-weight: 200;
+}
+
+h5 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+h6 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+a {
+  color: #4dade1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link-primario {
+  color: #4dade1;
+  display: inline;
+  font-size: 1.6rem;
+}
+.link-primario a {
+  color: #4dade1;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+}
+
+.link-primario :before {
+  left: 0px;
+  width: 0px;
+  bottom: -3px;
+  height: 1px;
+  content: "";
+  transition: all 0.3s ease-in-out 0s;
+  visibility: hidden;
+  background-color: rgb(77, 173, 225);
+  position: absolute !important;
+}
+.link-primario :hover::before {
+  width: 100%;
+  visibility: visible;
+}
+
+p,
+b,
+i {
+  font-size: 1.6rem;
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: 200;
+}
+b {
+  font-weight: 600;
+}
+.bold {
+  font-weight: 800;
+}
+.small {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.subrayar {
+  border-bottom: solid 1px #1b1f27;
+}
+h2 .subrayar {
+  border-bottom: solid 2px #1b1f27;
+}
+
+/********
+Paso 1: Definimos la estructura básica
+
+********/
+/* Barra de navegación superior */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -90px;
+  background: none;
+  padding: 1.6rem 0rem;
+}
+header p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+/* Cada sección de la landing */
+section {
+  background-color: #fff;
+  padding: 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Únicamente la portada tendrá un alto excepcional, para que ocupe toda la pantalla:
+calculamos el total del alto de la pantalla menos lo que mide el header */
+section#portada {
+  background-color: #fff5fa;
+
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: calc(100vh);
+  padding: 9rem 4rem 4rem;
+}
+section#portada::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Únicamente las secciones que ocupen posiciones impares dentro de su contenedor, tendrán otro fondo.
+Esto sirve para que nos quede una sección de un color, luego la siguiente de otro, luego la siguiente igual a la primera
+y así suscesivamente */
+section:nth-child(odd) {
+}
+
+/* Únicamente las secciones que lleven la clase seccion-form serán menos altas */
+section.seccion-form {
+  
+}
+
+footer {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/********
+Paso 2: Trabajamos nuestro header
+
+********/
+header nav {
+}
+
+.logo-container {
+}
+
+header nav img {
+}
+
+header nav ul {
+}
+
+header nav ul li {
+}
+
+header nav ul li button {
+}
+
+/********
+Paso 3: Trabajamos nuestra portada
+
+********/
+section#portada {
+  height: calc(100vh);
+}
+
+div.portada-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-right: calc(90vw - 45rem);
+  width: 90vw;
+  z-index: 90000;
+  height: 100vh;
+}
+div.portada-bloque1 {
+  text-align: right;
+  max-width: 66rem;
+  margin-top: 18vh;
+  margin-left: 4rem;
+  
+}
+div.portada-bloque2 {
+
+  line-height: 2rem;
+  max-width: 45rem;
+  margin: 4rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+div.portada-bloque3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 66rem;
+  gap: 1.6rem;
+}
+div.portada-bloque3 p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+div.portada-img1 {
+  top: 10vh;
+  margin-right: calc(45vw);
+  width: 22vh;
+  position: absolute;
+  bottom: 0;  z-index: 0;
+  background-image: url(../assets/img/podcasts-icon.svg);
+  background-repeat: no-repeat;
+}
+div.portada-img2 {
+  margin-left: calc(45vw);
+  bottom: 15vh;
+  width: 50vh;
+  height: 50vh;
+  position: absolute;
+  z-index: 1;
+  background: url(../assets/img/gatoPersonaje.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+div.flotante p {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 4rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.2rem;
+  max-width: 26rem;
+}
+
+div.portada-izquierda .separador {
+}
+
+div.portada-izquierda .portada-miniform {
+}
+  input[type="submit"] {
+    background-color: #1b1f27;
+    color: #fff;
+    font-size: 1.6rem;
+    padding: 1rem 0.8rem;
+    border-radius: 4px;
+    font-weight: 400;
+    border: #1b1f27 solid 1px;
+    width: 100%;
+    
+}
+ input.submit:hover {
+  background-color: #ffffff00;
+  color:#1b1f27;
+  border: solid 1px;
+ 
+
+}
+
+
+
+.mouse {
+  width: 26px;
+  height: 38px;
+  border: 2px solid #333;
+  border-radius: 20px;
+  position: relative;
+  margin-top: 3rem;
+  &::before {
+    content: "";
+    width: 3px;
+    height: 6px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    border-radius: 20px;
+    opacity: 1;
+    animation: wheel 2s infinite;
+    -webkit-animation: wheel 2s infinite;
+  }
+}
+@keyframes wheel {
+  to {
+    opacity: 0.6;
+    top: 10px;
+  }
+}
+
+@-webkit-keyframes wheel {
+  to {
+    opacity: 0.6;
+    top: 10px;
+  }
+}
+
+/********
+Paso 4: Trabajamos nuestra primera sección
+
+********/
+
+section#seccion-1 {
+  padding: 0rem;
+}
+div.seccion-1-header {
+  padding: 4rem 4rem;
+}
+div.seccion-1-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 8rem;
+}
+
+div.cards-argumentos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+div.cards-argumentos .card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  transition: all 0.4s ease-in-out; /* Para el efecto hover */
+  cursor: pointer;
+  gap: 3rem;
+  margin: 0 4rem 4rem 4rem;
+  max-width: 1000px;
+}
+
+div.cards-argumentos .card img {
+  border-radius: 6px;
+  height: 30vh;
+}
+div.cards-argumentos .card .card-contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+div.cards-argumentos .card .card-contenido h1 {
+  font-size: 6rem;
+}
+div.cards-argumentos .card .card-contenido h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1b1f27;
+}
+div.cards-argumentos .card .card-contenido p {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  font-weight: 200;
+}
+
+/* Efecto cuando le pasamos el mouse por arriba a la card*/
+div.cards-argumentos .card:hover {
+}
+
+/********
+Paso 5: Trabajamos nuestra segunda sección
+
+********/
+
+.grilla {
+}
+.grilla > *:not(.elemento-1) {
+}
+
+.grilla .elemento-1 {
+}
+.grilla .elemento-1 video {
+}
+
+.grilla .elemento-2 {
+}
+.grilla .elemento-3 {
+}
+.grilla .elemento-4 {
+}
+.grilla .elemento-5 {
+}
+
+/********
+Paso 6: Trabajamos nuestra tercera sección
+
+********/
+section#seccion-2 {
+  padding: 0;
+}
+div.seccion-2-contenido0 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 100%;
+}
+div.seccion-2-contenido {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 1000px;
+  background: #1b1f27;
+  border-radius: 0px 80px 0px 0px;
+  padding: 6rem;
+  margin-right: 6rem;
+  color:#fff;
+}
+
+div.seccion-2-img {
+}
+div.seccion-2-txt {
+  padding: 0 3rem 0 6rem;
+}
+div.seccion-2-txt h1 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("../assets/img/arte-gratis.png");
+
+  /* Full height */
+  height: 80vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+  
+}
+section#seccion-3 {
+  padding: 0 0;
+}
+section#seccion-3 h1,
+section#seccion-3 h3 {
+}
+
+section#seccion-3 h3 {
+}
+
+section#seccion-3 .card-container {
+}
+
+section#seccion-3 .card-container .quote.card {
+}
+section#seccion-3 .card-container .quote.card > * {
+}
+
+section#seccion-3 .card-container .quote.card img {
+}
+
+section#seccion-3 .card-container .quote.card h6 span {
+}
+
+section#seccion-3 .card-container .quote.card p {
+}
+
+div.seccion-3-header {
+  padding: 15rem 0;
+  max-width: 65vw;
+  margin: 0 auto;
+}
+div.seccion-3-header h1 {
+  font-size: 6rem;
+}
+div.seccion-3-header h2 {
+  font-size: 4rem;
+}
+div.seccion-3-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: auto;
+  margin-bottom: 4rem;
+}
+
+
+div.seccion-3-container::-webkit-scrollbar {
+  width: 0;
+  
+}
+div.seccion-3-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #f7f7f7;
+  align-items: flex-end;
+}
+div.seccion-3-card-img {
+  display: flex;
+  height: 450px;
+  width: 600px;
+  border-radius: 0 6px 6px 0;
+  background: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+div.seccion-3-card-txt {
+  margin: 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+div.seccion-3-card-txt h1 {
+  color: #1b1f27;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.4rem;
+}
+div.seccion-3-card-txt h4 {
+  color: rgb(27, 31, 39);
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  margin-bottom: 1.4rem;
+}
+div.seccion-3-card-txt p {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+  color: #464646;
+}
+div.seccion-3-card-txt a {
+  color: #4dade1;
+  font-weight: 600;
+}
+/*  ///////////////////////////*/
+
+section#seccion-4 {
+  padding: 0;
+}
+div.seccion-4-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0px;
+}
+
+div.seccion-4-img {
+  margin-left: -60px;
+}
+
+div.seccion-4-txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  z-index: 100;
+  position: relative;
+  text-align: right;
+}
+
+div.seccion-4-container img {
+  height: 450px;
+  width: auto;
+}
+div.seccion-4-txt h5 {
+  color: #1b1f27;
+  margin-left: 0;
+  max-width: 40rem;
+}
+div.seccion-4-txt h2 {
+  color: #1b1f27;
+  font-size: 5rem;
+  line-height: 6rem;
+  margin-left: 0;
+  max-width: 40rem;
+}
+
+/********
+Paso 7: Trabajamos las secciones intermedias que son reiteración del form
+
+********/
+section.seccion-form {
+  
+}
+
+section.seccion-form h3 {
+}
+
+section.seccion-form .miniform {
+}
+
+section.seccion-form .miniform input[type="submit"] {
+}
+
+section.seccion-form.oscuro input[type="submit"] {
+}
+section.seccion-form .miniform input[type="email"] {
+}
+section.seccion-form.oscuro input[type="email"] {
+}
+
+/********
+Paso 8: Trabajamos el footer
+
+********/
+footer {
+}
+footer h3 {
+}
+
+footer .primera-fila {
+}
+
+footer .primera-fila nav ul {
+}
+
+footer .primera-fila nav ul li {
+}
+
+footer .primera-fila nav ul button {
+}
+
+footer nav.segunda-fila {
+}
+
+footer nav.segunda-fila ul {
+}
+footer .segunda-fila ul li {
+}
+footer .segunda-fila ul li:hover {
+}
+footer .segunda-fila ul li:hover a {
+}
+
+/********
+Paso 9: Trabajamos el form y el feedback
+
+********/
+
+.popup-contenedor.oculto {
+  display: none;
+}
+
+.popup-contenedor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100000;
+  background-color: rgb(255 255 255 / 97%);
+}
+
+.popup-contenedor .popup {
+  width: 50%;
+  position: relative; /* Esto es para ubicar el botón de cerrar */
+}
+.popup-contenedor .popup h2 {
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.popup-contenedor .popup h4 {
+  margin-bottom: 2rem;
+}
+
+.popup-contenedor .popup p {
+  font-size: 3rem;
+}
+
+.popup-contenedor .popup p span {
+  text-decoration: underline;
+}
+
+.popup-contenedor .popup h3 {
+  margin-top: 4rem;
+}
+
+.popup-contenedor .popup .cerrar {
+  position: absolute;
+  right: 0px;
+  top: -10rem;
+  font-size: 8rem;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.popup-contenedor .popup .cerrar:hover {
+  color: #77ecba;
+}
+
+section#formulario-principal {
+ 
+}
+
+.formulario-principal {
+  align-items: center;
+}
+
+#formulario-principal {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 45rem;
+}
+
+#formulario-principal input,
+#formulario-principal select,
+#formulario-principal option {
+  height: 3.8rem;
+  font-family: "SF Pro Display", sans-serif;
+  display: block;
+  padding: 6px 0 7px;
+  min-width: 0;
+  box-sizing: content-box;
+  animation-name: mui-auto-fill-cancel;
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+#formulario-principal input {
+}
+
+#formulario-principal > .form-row:not(:last-child) {
+}
+
+/* form starting stylings ------------------------------- */
+.group {
+  position: relative;
+  margin-top: 45px;
+  width: 45rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+input.question:optional,
+input.question {
+  font-size: 2.5rem;
+  font-weight: 100;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #757575;
+  font-weight: 200;
+  margin: 0;
+  width: 100%;
+  transition: padding-top 0.2s ease, margin-top 0.2s ease;
+  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+}
+/* Underline and Placeholder */
+input.question:optional + label,
+input.question + label {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  -webkit-transition: width 0.4s ease;
+  transition: width 0.4s ease;
+  height: 0px;
+  border-top: 1px solid grey;
+  top: -1px;
+}
+
+input.question:optional:focus,
+input.question:focus {
+  padding-top: 35px;
+}
+
+input.question:focus + label > span {
+  top: -55px;
+  font-size: 1.6rem;
+  color: #ee5d52;
+  font-weight: 200;
+}
+input.question:optional + label > span,
+input.question:valid + label > span {
+  top: -55px;
+  font-size: 1.6rem;
+  color: #54be90;
+  font-weight: 200;
+}
+
+input.question:optional:focus + label > span,
+input.question:optional:focus:invalid + label > span {
+  top: -55px;
+  font-size: 1.6rem;
+  color: #ee5d52;
+  font-weight: 200;
+
+  
+}
+
+
+input.question:focus:invalid + label  {
+
+  border-color: #ee5d52;
+  
+}
+/* Estilos cuando el campo de entrada tiene al menos un carácter */
+
+input.question:optional:valid + label > span {
+  top: -55px;
+  font-size: 1.6rem;
+  color: #54be90;
+  font-weight: 200;
+}
+input.question:optional:invalid + label > span {
+  top: -55px;
+  font-size: 1.6rem;
+  color: #ee5d52;
+  font-weight: 200;
+}
+
+input.question:valid + label {
+  border-color: #54be90;
+}
+
+
+input.question:invalid {
+  box-shadow: none;
+}
+
+input.question:optional + label {
+  border-color: #3c0089;
+}
+input.question:optional:valid + label {
+  border-color: #54be90;
+}
+input.question:optional:invalid + label {
+  border-color: #ee5d52;
+}
+
+input.question:optional + label > span,
+input.question + label > span {
+  font-weight: 300;
+  margin: 0;
+  position: absolute;
+  color: #1b1f27;
+  font-size: 2.5rem;
+  top: -40px;
+  left: 0px;
+
+  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+.condiciones {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+  width: 100%;
+}
+.condiciones p {
+  font-size: 1.2rem;
+ 
+
+}
+
+label.toggle { 
+  position: relative; 
+  display: inline-block; 
+  width: 45px; 
+  height: 28px; 
+} 
+
+input[type="checkbox"] { 
+  width: 45px; 
+  height: 0; 
+  opacity: 0; 
+} 
+
+.ball { 
+  position: absolute; 
+  cursor: pointer; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  background-color: #ccc; 
+  transition: .3s; 
+  border-radius: 25px; 
+} 
+
+.ball::before { 
+  position: absolute; 
+  content: ''; 
+  height: 20px; 
+  width: 20px; 
+  left: 5px; 
+  bottom: 4px; 
+  background-color: #fff; 
+  transition: .3s; 
+  border-radius: 25px; 
+} 
+
+input:checked + .ball { 
+  background-color: #58d68d; 
+} 
+
+input:checked + .ball:before { 
+  transform: translateX(16px); 
+}
+
+
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+/********
+Paso 10: Trabajamos para que sea responsive
+********/
+
+
+
+@media screen and (min-width: 376px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .desktop-only {
+    display: none;
+  }
+  h1 {
+    font-size: 6rem;
+    font-weight: 800;
+  }
+  h2 {
+    font-size: 4rem;
+    font-weight: 200;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+ 
+
+  .flotante {
+    display: none;
+  }
+
+
+
+  div.seccion-1-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: auto;
+  }
+
+
+
+
+  div.cards-argumentos {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 4rem;
+  }
+  div.cards-argumentos .card {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 4rem 4rem;
+  }
+
+  div.cards-argumentos .card .card-contenido h1 {
+    font-size: 4rem;
+  }
+  div.seccion-2-txt h1 {
+    font-size: 4rem;
+  }
+
+  div.seccion-3-header h1 {
+    font-size: 4rem;
+  }
+  div.seccion-3-header h2 {
+    font-size: 3rem;
+  }
+  div.seccion-4-container {
+    display: flex;
+  }
+
+  div.seccion-4-txt {
+    
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  div.seccion-4-txt h1{
+    
+    font-size: 8rem;
+  }
+
+  div.seccion-3-card {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  div.seccion-3-card-img {
+    height: 350px;
+    width: 90vw;
+    border-radius: 0;
+  }
+
+  div.seccion-3-card-txt {
+    height: 220px;
+    justify-content: flex-end;
+    margin: 4rem;
+    max-width: 74vw;
+  }
+
+  div.seccion-4-img {
+    margin-left: -100px;
+    margin-bottom: -40px;
+  }
+}
