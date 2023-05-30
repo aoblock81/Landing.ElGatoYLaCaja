@@ -1114,6 +1114,8 @@ Paso 10: Trabajamos para que sea responsive
   }
   .parallax {
     height: 100vh;
+    background-size: cover;
+  
   }
   div.seccion-3-header {
     max-width: 80vw;
