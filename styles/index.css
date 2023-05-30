@@ -5,11 +5,14 @@ Paso 0: Definimos tipografías y propiedades básicas del documento
 
 @font-face {
   font-family: "SF Pro Display", sans-serif;
-  src: url("../assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.otf")
+  src: url("../assets/fonts/sf-pro-display/SF-Pro-Display-Bold.otf")
     format("otf");
-  font-weight: normal;
+  font-weight: 800;
   font-style: normal;
 }
+
+
+
 
 @font-face {
   font-family: "IBM Plex Mono", monospace;
@@ -31,7 +34,7 @@ html,
 body {
   color: #1b1f27;
   font-size: 10px;
-  font-family: "SF Pro Display";
+  font-family: "SF Pro Display" , sans-serif;
 }
 * {
   box-sizing: border-box !important; /* Importante: esto hace que el tamaño de todas las cajas contemple el padding */
@@ -106,7 +109,7 @@ a {
   content: "";
   transition: all 0.3s ease-in-out 0s;
   visibility: hidden;
-  background-color:#65c4d5;
+  background-color: #65c4d5;
   position: absolute !important;
 }
 .link-primario :hover::before {
@@ -230,7 +233,7 @@ div.portada-container {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  
+
   width: 90vw;
   z-index: 90000;
   height: 100vh;
@@ -238,7 +241,6 @@ div.portada-container {
 div.portada-bloque1 {
   text-align: right;
   max-width: 66rem;
-  
 }
 div.portada-bloque2 {
   line-height: 2rem;
@@ -823,7 +825,7 @@ input.question + label {
   padding: 0;
   margin: 0;
   width: 100%;
-
+  font-family: "SF Pro Display" , sans-serif;
   -webkit-transition: width 0.4s ease;
   transition: width 0.4s ease;
   height: 0px;
@@ -919,6 +921,7 @@ input.question + label > span {
 }
 .condiciones p {
   font-size: 1.2rem;
+  max-width: 290px;
 }
 
 label.toggle {
@@ -980,35 +983,7 @@ input:checked + .ball:before {
 /********
 Paso 10: Trabajamos para que sea responsive
 ********/
-@media screen and (max-width: 320px) {
-html {
-  font-size: 8px;
-}
 
-}
-
-@media screen and (max-width: 750px) {
-  .mobile-only {
-    display: none;
-  }
-  div.seccion-2-txt {
-    padding: 1rem;
-  }
-  div.seccion-2-contenido {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    max-width: 1000px;
-    background: #1b1f27;
-    border-radius: 0px 80px 0px 0px;
-    padding: 3rem;
-    margin-right: 6rem;
-    color: #fff;
-  }
-  .parallax {
-    height: 100vh;
-}
-}
 
 @media screen and (max-width: 1000px) {
   .desktop-only {
@@ -1097,11 +1072,79 @@ html {
   div.seccion-3-card-txt {
     min-height: 250px;
     justify-content: flex-end;
-    
+
     max-width: 74vw;
   }
 
   div.seccion-4-img {
     margin-left: -100px;
   }
+
+  div.seccion-3-header h1 {
+    font-size: 3.2rem;
+  }
+  div.seccion-3-header h2 {
+    font-size: 3.0rem;
+  }
+
+
+}
+
+
+
+
+@media screen and (max-width: 750px) {
+  .mobile-only {
+    display: none;
+  }
+  html {
+    font-size: 9px;
+  }
+
+
+  div.seccion-2-txt {
+    padding: 1rem;
+  }
+  div.seccion-2-contenido {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 1000px;
+    background: #1b1f27;
+    border-radius: 0px 80px 0px 0px;
+    padding: 3rem;
+    margin-right: 6rem;
+    color: #fff;
+  }
+  .parallax {
+    height: 100vh;
+    background-size: cover;
+  
+  }
+  div.seccion-3-header {
+    max-width: 80vw;
+  }
+  div.seccion-4-txt {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  div.seccion-4-txt h1 {
+    font-size: 6rem;
+  }
+  div.seccion-4-txt h2 {
+    font-size: 4rem;
+  }
+
+  #formulario-principal {
+    margin-top: -5rem;
+}
+
+}
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 8px;
+  }
+
 }
