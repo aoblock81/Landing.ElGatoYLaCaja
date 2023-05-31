@@ -3,13 +3,30 @@ Paso 0: Definimos tipografías y propiedades básicas del documento
 
 ********/
 
+
 @font-face {
-  font-family: "SF Pro Display", sans-serif;
-  src: url("../assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.otf")
+  font-family: "gotham", sans-serif;
+  src: url("../assets/fonts/gotham/Gotham-Book.otf")
     format("otf");
-  font-weight: normal;
+  font-weight: 200;
   font-style: normal;
 }
+@font-face {
+  font-family: "gotham", sans-serif;
+  src: url("../assets/fonts/gotham/Gotham-Bold.otf")
+    format("otf");
+  font-weight: 400;
+  font-style: bold;
+}
+@font-face {
+  font-family: "gotham", sans-serif;
+  src: url("../assets/fonts/gotham/Gotham-Black.otf")
+    format("otf");
+  font-weight: 800;
+  font-style: normal;
+}
+
+
 
 @font-face {
   font-family: "IBM Plex Mono", monospace;
@@ -31,7 +48,7 @@ html,
 body {
   color: #1b1f27;
   font-size: 10px;
-  font-family: "SF Pro Display";
+  font-family: "Gotham";
 }
 * {
   box-sizing: border-box !important; /* Importante: esto hace que el tamaño de todas las cajas contemple el padding */
@@ -45,7 +62,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "SF Pro Display", sans-serif;
+
+  font-family: "Gotham";
 }
 
 h1 {
@@ -119,7 +137,7 @@ b,
 i {
   font-size: 1.6rem;
   font-family: "SF Pro Display", sans-serif;
-  font-weight: 200;
+
 }
 b {
   font-weight: 600;
@@ -233,7 +251,8 @@ div.portada-container {
 
   width: 90vw;
   z-index: 90000;
-  height: 100vh;
+  position: absolute;
+  margin-bottom: 10rem;
 }
 div.portada-bloque1 {
   text-align: right;
@@ -262,17 +281,17 @@ div.portada-bloque3 p {
 }
 
 div.portada-img1 {
-  top: 10vh;
+
   margin-right: calc(45vw);
   width: 22vh;
-  bottom: 0;
+  height: 22vh;
   z-index: 0;
   background-image: url(../assets/img/podcasts-icon.svg);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 div.portada-img2 {
   margin-left: calc(45vw);
-  bottom: 15vh;
   width: 50vh;
   height: 50vh;
   z-index: 1;
@@ -299,7 +318,7 @@ input[type="submit"] {
   background-color: #1b1f27;
   color: #fff;
   font-size: 1.6rem;
-  padding: 1rem 0.8rem;
+  padding: 1.6rem;
   border-radius: 4px;
   font-weight: 400;
   border: #1b1f27 solid 1px;
@@ -772,10 +791,10 @@ section#formulario-principal {
 #formulario-principal input,
 #formulario-principal select,
 #formulario-principal option {
-  height: 3.8rem;
+
   font-family: "SF Pro Display", sans-serif;
   display: block;
-  padding: 6px 0 7px;
+  padding: 1.6rem 0;
   min-width: 0;
   box-sizing: content-box;
   animation-name: mui-auto-fill-cancel;
@@ -822,7 +841,7 @@ input.question + label {
   padding: 0;
   margin: 0;
   width: 100%;
-
+  font-family: "SF Pro Display" , sans-serif;
   -webkit-transition: width 0.4s ease;
   transition: width 0.4s ease;
   height: 0px;
@@ -918,6 +937,7 @@ input.question + label > span {
 }
 .condiciones p {
   font-size: 1.2rem;
+  max-width: 290px;
 }
 
 label.toggle {
@@ -1096,6 +1116,10 @@ Paso 10: Trabajamos para que sea responsive
   html {
     font-size: 9px;
   }
+  h1 {
+    font-size: 4rem;
+    
+}
 
 
   div.seccion-2-txt {
@@ -1142,5 +1166,10 @@ Paso 10: Trabajamos para que sea responsive
   html {
     font-size: 8px;
   }
+
+  h1 {
+    font-size: 4rem;
+    
+}
 
 }
