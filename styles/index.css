@@ -75,7 +75,7 @@ h3 {
 
 h4 {
   font-size: 4rem;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 h5 {
@@ -309,22 +309,7 @@ div.portada-izquierda .separador {
 
 div.portada-izquierda .portada-miniform {
 }
-input[type="submit"] {
-  background-color: #1b1f27;
-  color: #fff;
-  font-size: 1.6rem;
-  padding: 1.6rem;
-  border-radius: 4px;
-  font-weight: 400;
-  border: #1b1f27 solid 1px;
-  width: 100%;
-  border-radius: 50px;
-}
-input.submit:hover {
-  background-color: #ffffff00;
-  color: #1b1f27;
-  border: solid 1px;
-}
+
 
 .mouse {
   width: 26px;
@@ -493,7 +478,7 @@ div.seccion-2-txt h1 {
 
 .parallax {
   /* The image used */
-  background-image: url("../assets/img/arte-gratis.png");
+  background-image: url("../assets/img/arte-gratis.jpg");
 
   /* Full height */
   height: 80vh;
@@ -727,8 +712,10 @@ Paso 9: Trabajamos el form y el feedback
 }
 
 .popup-contenedor .popup {
-  width: 50%;
-  position: relative; /* Esto es para ubicar el botón de cerrar */
+  width: 70vw;
+  position: relative;
+  display: flex; /* Esto es para ubicar el botón de cerrar */
+  flex-direction: row;
 }
 .popup-contenedor .popup h2 {
   font-size: 3rem;
@@ -763,6 +750,15 @@ Paso 9: Trabajamos el form y el feedback
 .popup-contenedor .popup .cerrar:hover {
   color: #77ecba;
 }
+.code img{
+  width: 190px;
+height: 190px;
+margin: 0 3rem 3rem 0;
+}
+
+
+
+
 
 section#formulario-principal {
 }
@@ -788,7 +784,7 @@ section#formulario-principal {
 #formulario-principal option {
   font-family: "SF Pro Display", sans-serif;
   display: block;
-  padding: 1.6rem 0;
+  padding: 0.6rem 0 0.6rem 0;
   min-width: 0;
   box-sizing: content-box;
   animation-name: mui-auto-fill-cancel;
@@ -796,6 +792,41 @@ section#formulario-principal {
 }
 
 #formulario-principal input {
+  
+}
+#formulario-principal input[type="submit"] {
+  background-color: #1b1f27;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 1.6rem;
+  border-radius: 4px;
+  font-weight: 400;
+  border: #1b1f27 solid 1px;
+  width: 100%;
+  border-radius: 50px;
+}
+
+#formulario-principal input[type="submit"]:hover {
+  background-color: #ffffff00;
+  color: #1b1f27;
+  border: solid 1px;
+}
+
+input[type="submit"] {
+  background-color: #1b1f27;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 1.6rem;
+  border-radius: 4px;
+  font-weight: 400;
+  border: #1b1f27 solid 1px;
+  width: 100%;
+  border-radius: 50px;
+}
+input.submit:hover {
+  background-color: #ffffff00;
+  color: #1b1f27;
+  border: solid 1px;
 }
 
 #formulario-principal > .form-row:not(:last-child) {
@@ -1170,6 +1201,14 @@ Paso 10: Trabajamos para que sea responsive
     width: 46vh;
     margin-top: 15rem;
 }
+
+
+.popup-contenedor .popup {
+  width: 80%;
+  flex-direction: column;
+}
+
+
 }
 
 @media screen and (max-width: 375px) {
@@ -1192,4 +1231,19 @@ div.portada-container1 {
   padding: 0 4rem;
 }
   
+.popup-contenedor .popup .cerrar {
+  position: fixed;
+  right: 3rem;
+  top: 8rem;
+
+}
+
+input.question:optional + label > span, input.question + label > span {
+
+  font-size: 2.2rem;
+
+}
+div.seccion-1-header h2 {
+  font-size: 3.5rem;
+}
 }
